@@ -19,7 +19,7 @@ module Xbox
 
       def call
         while curr_page <= max_page
-          doc = Nokogiri::HTMl(open(get_url(curr_page)))
+          page = Page.new(get_url(curr_page))
         end
 
         return deals
