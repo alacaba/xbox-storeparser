@@ -1,7 +1,7 @@
 require "xbox/storeparser/version"
+require "xbox/storeparser/deals"
 
 module Xbox
   module Storeparser
-    # Your code goes here...
   end
 end
