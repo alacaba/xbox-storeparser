@@ -6,10 +6,6 @@ RSpec.describe Xbox::Storeparser::Deals do
       expect(deals.locale).to eq 'en-US'
     end
 
-    it 'sets default current page to 1' do
-      expect(deals.current_page).to eq 1
-    end
-
     it 'sets default deals to empty array' do
       expect(deals.deals).to eq []
     end
