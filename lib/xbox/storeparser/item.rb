@@ -27,7 +27,7 @@ module Xbox
       end
 
       def amount
-        @amount ||= price.split[1]
+        @amount ||= price.split[1].to_f
       end
 
       def currency

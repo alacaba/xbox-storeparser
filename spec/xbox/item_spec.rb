@@ -31,7 +31,7 @@ RSpec.describe Xbox::Storeparser::Item do
 
   describe "#amount" do
     it "retrns the item amount" do
-      expect(item.amount).to eq "13.99"
+      expect(item.amount).to eq 13.99
     end
   end
 
@@ -47,7 +47,7 @@ RSpec.describe Xbox::Storeparser::Item do
       expect(item.details[:box_art]).to eq "/images/xbox-one/BZ7FPSGCCMQQ.png"
       expect(item.details[:title]).to eq "11-11 Memories Retold"
       expect(item.details[:currency]).to eq "GBP"
-      expect(item.details[:amount]).to eq "13.99"
+      expect(item.details[:amount]).to eq 13.99
     end
   end
 end
