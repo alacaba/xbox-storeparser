@@ -16,5 +16,11 @@ RSpec.describe Xbox::Storeparser::Deals do
       allow(deals).to receive(:fetch) { [1, 2, 3] }
       expect(deals.fetch).to eq [1, 2, 3]
     end
+
+    it "fetches all the items" do
+      _deals = deals.fetch
+
+      _deals.each { |d| p d.details }
+    end
   end
 end

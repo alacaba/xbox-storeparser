@@ -14,15 +14,20 @@ module Xbox
       def get_url(curr_page=1)
         page = (curr_page.nil? || curr_page == 1) ? "" : "page-#{curr_page}"
 
-        "#{BASE_URI}/#{locale}/xbox/deals/#{page}"
+        "#{BASE_URI}/#{locale}/xbox-one/deals/#{page}"
       end
 
       def call
-        while curr_page <= max_page
-          page = Page.new(get_url(curr_page))
+        deals = []
+
+        while @curr_page <= @max_page
+          page = Page.new(get_url(@curr_page))
+          @max_page = page.max_page
+          deals.push(page.items)
+          @curr_page += 1
         end
 
-        return deals
+        return deals.flatten.map { |deal| Item.new(deal) }
       end
     end
   end

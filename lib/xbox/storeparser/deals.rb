@@ -9,6 +9,8 @@ module Xbox
       end
 
       def fetch
+        fetcher = Fetcher.new(locale: locale)
+        @deals = fetcher.call
       end
     end
   end
