@@ -1,7 +1,8 @@
 module Xbox
   module Storeparser
     class Item
-      attr_accessor :item, :price, :box_art, :title, :discount
+      attr_accessor :item, :price, :box_art, :title, :discount,
+        :boxart_section, :price_section
 
       def initialize(item)
         @item = item
