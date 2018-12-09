@@ -28,4 +28,13 @@ RSpec.describe Xbox::Storeparser::Item do
       expect(item.title).to eq "11-11 Memories Retold"
     end
   end
+
+  describe "#details" do
+    it "returns the details" do
+      expect(item.details[:price]).to eq "GBP 13.99"
+      expect(item.details[:discount]).to eq "Save 30%"
+      expect(item.details[:box_art]).to eq "/images/xbox-one/BZ7FPSGCCMQQ.png"
+      expect(item.details[:title]).to eq "11-11 Memories Retold"
+    end
+  end
 end

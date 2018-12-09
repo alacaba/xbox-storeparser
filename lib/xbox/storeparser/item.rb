@@ -1,7 +1,7 @@
 module Xbox
   module Storeparser
     class Item
-      attr_accessor :item, :price_section
+      attr_accessor :item, :price, :box_art, :title, :discount
 
       def initialize(item)
         @item = item
@@ -18,19 +18,28 @@ module Xbox
       end
 
       def discount
-        price_section[2]
+        @discount ||= price_section[2]
       end
 
       def price
-        price_section[0]
+        @price ||= price_section[0]
       end
 
       def box_art
-        boxart_section["src"].value
+        @box_art ||= boxart_section["src"].value
       end
 
       def title
-        boxart_section["alt"].value
+        @title ||= boxart_section["alt"].value
+      end
+
+      def details
+        {
+          price: price,
+          title: title,
+          discount: discount,
+          box_art: box_art,
+        }
       end
     end
   end
