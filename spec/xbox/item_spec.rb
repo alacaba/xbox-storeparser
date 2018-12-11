@@ -50,4 +50,24 @@ RSpec.describe Xbox::Storeparser::Item do
       expect(item.details[:amount]).to eq 13.99
     end
   end
+
+  describe "#store_link" do
+    it "returns the store link" do
+      expect(item.store_link).to eq "https://xbox.com/en-GB/xbox-one/deals/game-133997/11-11-memories-retold/"
+    end
+  end
+
+  describe "#to_s" do
+    it "displays the amount" do
+      expect(item.to_s).to include item.amount.to_s
+    end
+
+    it "displays the title" do
+      expect(item.to_s).to include item.title
+    end
+
+    it "displays the store link" do
+      expect(item.to_s).to include item.store_link
+    end
+  end
 end

@@ -4,11 +4,11 @@ RSpec.describe Xbox::Storeparser::Fetcher do
 
   describe "#get_url" do
     it "returns the url based on locale" do
-      expect(fetcher.get_url).to eq "#{described_class::BASE_URI}/#{locale}/xbox/deals/"
+      expect(fetcher.get_url).to eq "#{described_class::BASE_URI}/#{locale}/xbox-one/deals/"
     end
 
     it "returns the url based on current page" do
-      expect(fetcher.get_url(2)).to eq "#{described_class::BASE_URI}/#{locale}/xbox/deals/page-2"
+      expect(fetcher.get_url(2)).to eq "#{described_class::BASE_URI}/#{locale}/xbox-one/deals/page-2"
     end
   end
 end

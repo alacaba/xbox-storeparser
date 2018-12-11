@@ -1,8 +1,10 @@
 module Xbox
   module Storeparser
     class Item
+
       attr_accessor :item, :price, :box_art, :title, :discount,
-        :boxart_section, :price_section, :amount, :currency
+        :boxart_section, :price_section, :amount, :currency,
+        :store_link
 
       def initialize(item)
         @item = item
@@ -42,6 +44,13 @@ module Xbox
         @title ||= boxart_section["alt"].value
       end
 
+      def store_link
+        link = item.at_css('a')
+        store_path = link.attributes["href"].value
+        xbox = "https://xbox.com"
+        @store_link ||= "#{xbox}#{store_path}"
+      end
+
       def details
         {
           title: title,
@@ -49,7 +58,12 @@ module Xbox
           box_art: box_art,
           amount: amount,
           currency: currency,
+          store_link: store_link,
         }
+      end
+
+      def to_s
+        "#{details[:title]} - #{details[:amount]} - #{details[:store_link]}"
       end
     end
   end
