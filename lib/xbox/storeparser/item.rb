@@ -2,6 +2,14 @@ module Xbox
   module Storeparser
     class Item
 
+      SUPPORTED_CURRENCIES = {
+        "en-US" => "USD",
+        "en-AU" => "AUD",
+        "en-DE" => "EUR",
+        "en-UK" => "GBP",
+        "en-CA" => "CAD",
+      }
+
       attr_accessor :item, :price, :box_art, :title, :discount,
         :boxart_section, :price_section, :amount, :currency,
         :store_link
@@ -47,7 +55,7 @@ module Xbox
       def store_link
         link = item.at_css('a')
         store_path = link.attributes["href"].value
-        xbox = "https://xbox.com"
+        xbox = "https://storeparser.com"
         @store_link ||= "#{xbox}#{store_path}"
       end
 
@@ -63,7 +71,9 @@ module Xbox
       end
 
       def to_s
-        "#{details[:title]} - #{details[:amount]} - #{details[:store_link]}"
+        md_link = "[#{details[:title]}](#{details[:store_link]})"
+        amt_curr = "#{details[:amount]} - #{details[:currency]}"
+        "#{md_link} - #{amt_curr}"
       end
     end
   end

@@ -53,7 +53,7 @@ RSpec.describe Xbox::Storeparser::Item do
 
   describe "#store_link" do
     it "returns the store link" do
-      expect(item.store_link).to eq "https://xbox.com/en-GB/xbox-one/deals/game-133997/11-11-memories-retold/"
+      expect(item.store_link).to eq "https://storeparser.com/en-GB/xbox-one/deals/game-133997/11-11-memories-retold/"
     end
   end
 
