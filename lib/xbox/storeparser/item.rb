@@ -72,7 +72,7 @@ module Xbox
 
       def to_s
         md_link = "[#{details[:title]}](#{details[:store_link]})"
-        amt_curr = "#{details[:amount]} - #{details[:currency]}"
+        amt_curr = "#{details[:amount]} #{details[:currency]}"
         "#{md_link} - #{amt_curr}"
       end
     end
