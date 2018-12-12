@@ -24,6 +24,7 @@ module Xbox
       end
 
       def max_page
+        return 1 if doc.nil?
         matches = /[0-9]+/.match(nav_links.text)
         matches.to_s.split('').map(&:to_i).max
       end

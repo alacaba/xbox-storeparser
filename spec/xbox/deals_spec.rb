@@ -18,9 +18,9 @@ RSpec.describe Xbox::Storeparser::Deals do
     end
 
     it "fetches all the items" do
-      #_deals = deals.fetch
+      _deals = deals.fetch
 
-      #_deals.each { |d| p d.details }
+      _deals.each { |d| p d.details }
     end
   end
 end

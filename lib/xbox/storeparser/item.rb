@@ -1,15 +1,6 @@
 module Xbox
   module Storeparser
     class Item
-
-      SUPPORTED_CURRENCIES = {
-        "en-US" => "USD",
-        "en-AU" => "AUD",
-        "en-DE" => "EUR",
-        "en-UK" => "GBP",
-        "en-CA" => "CAD",
-      }
-
       attr_accessor :item, :price, :box_art, :title, :discount,
         :boxart_section, :price_section, :amount, :currency,
         :store_link

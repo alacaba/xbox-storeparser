@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    xbox-storeparser (0.1.0)
+    xbox-storeparser (0.2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -36,4 +36,4 @@ DEPENDENCIES
   xbox-storeparser!
 
 BUNDLED WITH
-   1.16.5
+   1.17.2
