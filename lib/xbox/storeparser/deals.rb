@@ -12,6 +12,10 @@ module Xbox
         fetcher = Fetcher.new(locale: locale)
         @deals = fetcher.call
       end
+
+      def filter(price)
+        deals.select { |deal| deals.amount <= price }
+      end
     end
   end
 end
